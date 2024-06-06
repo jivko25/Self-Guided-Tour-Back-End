@@ -1,5 +1,10 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using SelfGuidedTours.Infrastructure.Data;
 using SelfGuidedTours.Infrastructure.Data.Models;
+using System.Text;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
@@ -13,10 +18,11 @@ namespace Microsoft.Extensions.DependencyInjection
         public static IServiceCollection AddApplicationDbContext(this IServiceCollection services, IConfiguration config)
         {
             //TODO: add context here
-            //services.AddDbContext<ApplicationDbContext>(options =>
-            //{
-            //    options.UseSqlServer(config.GetConnectionString("DefaultConnection"));
-            //});
+            var connectionString = config.GetConnectionString("DefaultConnection"); //Connection string from user secrets
+            services.AddDbContext<SelfGuidedToursDbContext>(options =>
+            {
+                options.UseSqlServer(connectionString);
+            });
 
             return services;
         }
@@ -24,8 +30,10 @@ namespace Microsoft.Extensions.DependencyInjection
         {
 
             services.AddIdentityCore<ApplicationUser>()
-                .AddRoles<IdentityRole>();
-            //TODO: Add token provider and default stores
+                .AddRoles<IdentityRole>()
+                .AddTokenProvider<DataProtectorTokenProvider<ApplicationUser>>("SelfGuidedTours")
+                .AddEntityFrameworkStores<SelfGuidedToursDbContext>()
+                .AddDefaultTokenProviders();
 
 
             //Password requirements
@@ -38,7 +46,22 @@ namespace Microsoft.Extensions.DependencyInjection
                 options.Password.RequiredLength = 8;
                 options.Password.RequiredUniqueChars = 1;
             });
-
+            //TODO:
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+                        ValidateLifetime = true,
+                        ValidateIssuerSigningKey = true,
+                        ValidIssuer = config["Jwt:Issuer"],
+                        ValidAudience = config["Jwt:Audience"],
+                        IssuerSigningKey = new SymmetricSecurityKey(
+                            Encoding.UTF8.GetBytes(config["Jwt:Key"]))
+                    };
+                });
 
             return services;
         }
