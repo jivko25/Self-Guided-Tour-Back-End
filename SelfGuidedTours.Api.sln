@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34607.119
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelfGuidedTours.Api", "SelfGuidedTours.Api\SelfGuidedTours.Api.csproj", "{D150216A-48D7-41F6-94D5-E70D9D5C65E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelfGuidedTours.Infrastructure", "SelfGuidedTours.Infrastructure\SelfGuidedTours.Infrastructure.csproj", "{19B55796-F5B0-4A26-B43A-B247D2B51452}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D150216A-48D7-41F6-94D5-E70D9D5C65E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D150216A-48D7-41F6-94D5-E70D9D5C65E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D150216A-48D7-41F6-94D5-E70D9D5C65E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D150216A-48D7-41F6-94D5-E70D9D5C65E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19B55796-F5B0-4A26-B43A-B247D2B51452}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19B55796-F5B0-4A26-B43A-B247D2B51452}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19B55796-F5B0-4A26-B43A-B247D2B51452}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19B55796-F5B0-4A26-B43A-B247D2B51452}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DDD3979B-4754-4124-9BB6-FBB20E799A29}
+	EndGlobalSection
+EndGlobal
