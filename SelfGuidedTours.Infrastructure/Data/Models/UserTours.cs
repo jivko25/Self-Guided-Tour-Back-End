@@ -1,14 +1,19 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace SelfGuidedTours.Infrastructure.Data.Models
 {
-    public class Payment
+    public class UserTours
     {
-        [Key]
-        public int PaymentId { get; set; }
-
         [Required]
+        [Key]
+        public int UserTourId { get; set; }
+
         public string UserId { get; set; } = null!;
         [ForeignKey(nameof(UserId))]
         public ApplicationUser User { get; set; } = null!;
@@ -19,10 +24,6 @@ namespace SelfGuidedTours.Infrastructure.Data.Models
         public Tour Tour { get; set; } = null!;
 
         [Required]
-        [Column(TypeName = "decimal(10, 2)")]
-        public decimal Amount { get; set; }
-
-        [Required]
-        public DateTime PaymentDate { get; set; } = DateTime.Now;
+        public DateTime PurchaseDate { get; set; } = DateTime.Now;
     }
 }
