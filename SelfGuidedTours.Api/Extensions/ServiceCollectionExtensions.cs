@@ -17,7 +17,6 @@ namespace Microsoft.Extensions.DependencyInjection
         }
         public static IServiceCollection AddApplicationDbContext(this IServiceCollection services, IConfiguration config)
         {
-            //TODO: add context here
             var connectionString = config.GetConnectionString("DefaultConnection"); //Connection string from user secrets
             services.AddDbContext<SelfGuidedToursDbContext>(options =>
             {
@@ -46,7 +45,6 @@ namespace Microsoft.Extensions.DependencyInjection
                 options.Password.RequiredLength = 8;
                 options.Password.RequiredUniqueChars = 1;
             });
-            //TODO:
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
                 {
@@ -56,10 +54,10 @@ namespace Microsoft.Extensions.DependencyInjection
                         ValidateAudience = true,
                         ValidateLifetime = true,
                         ValidateIssuerSigningKey = true,
-                        ValidIssuer = config["Jwt:Issuer"],
-                        ValidAudience = config["Jwt:Audience"],
+                        ValidIssuer = config["Jwt:Issuer"], // Issuer from user secrets
+                        ValidAudience = config["Jwt:Audience"], // Audience from user secrets
                         IssuerSigningKey = new SymmetricSecurityKey(
-                            Encoding.UTF8.GetBytes(config["Jwt:Key"]))
+                            Encoding.UTF8.GetBytes(config["Jwt:Key"])) // Key from user secrets
                     };
                 });
 
