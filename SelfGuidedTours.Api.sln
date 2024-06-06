@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34607.119
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelfGuidedTours.Api", "SelfGuidedTours.Api\SelfGuidedTours.Api.csproj", "{D150216A-48D7-41F6-94D5-E70D9D5C65E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SelfGuidedTours.Api", "SelfGuidedTours.Api\SelfGuidedTours.Api.csproj", "{D150216A-48D7-41F6-94D5-E70D9D5C65E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelfGuidedTours.Infrastructure", "SelfGuidedTours.Infrastructure\SelfGuidedTours.Infrastructure.csproj", "{19B55796-F5B0-4A26-B43A-B247D2B51452}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SelfGuidedTours.Infrastructure", "SelfGuidedTours.Infrastructure\SelfGuidedTours.Infrastructure.csproj", "{19B55796-F5B0-4A26-B43A-B247D2B51452}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelfGuidedTours.Core", "SelfGuidedTours.Core\SelfGuidedTours.Core.csproj", "{0EF0AF8B-33BC-4A00-94CC-306B18ADE8D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelfGuidedTours.Common", "SelfGuidedTours.Common\SelfGuidedTours.Common.csproj", "{94C6F7A9-EEB6-4058-AAA4-E20B8B41BDE9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{19B55796-F5B0-4A26-B43A-B247D2B51452}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19B55796-F5B0-4A26-B43A-B247D2B51452}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19B55796-F5B0-4A26-B43A-B247D2B51452}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EF0AF8B-33BC-4A00-94CC-306B18ADE8D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EF0AF8B-33BC-4A00-94CC-306B18ADE8D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EF0AF8B-33BC-4A00-94CC-306B18ADE8D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EF0AF8B-33BC-4A00-94CC-306B18ADE8D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94C6F7A9-EEB6-4058-AAA4-E20B8B41BDE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94C6F7A9-EEB6-4058-AAA4-E20B8B41BDE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94C6F7A9-EEB6-4058-AAA4-E20B8B41BDE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94C6F7A9-EEB6-4058-AAA4-E20B8B41BDE9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
