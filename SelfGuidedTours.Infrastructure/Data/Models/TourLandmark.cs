@@ -12,7 +12,7 @@ namespace SelfGuidedTours.Infrastructure.Data.Models
 
        [Required]
         public int LandmarkId { get; set; }
-        [ForeignKey("Landmark")]
+        [ForeignKey(nameof(LandmarkId))]
         public Landmark Landmark { get; set; } = null!;
 
         [Required]

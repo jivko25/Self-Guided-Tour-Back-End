@@ -11,12 +11,12 @@ namespace SelfGuidedTours.Infrastructure.Data.Models
         [Required]
         public string UserId { get; set; } = null!;
         [ForeignKey(nameof(UserId))]
-        public ApplicationUser User { get; set; }
+        public ApplicationUser User { get; set; } = null!;
 
         [Required]
         public int TourId { get; set; }
         [ForeignKey(nameof(TourId))]
-        public Tour Tour { get; set; }
+        public Tour Tour { get; set; } = null!;
 
         [Required]
         [Range(1, 5)]
